@@ -641,7 +641,7 @@
             <form action=" " method="post" autocomplete="off" name="google-sheet" role="form" class="php-email-form">
               <div class="form-row">
                 <div class="form-group col-md-6">
-                  <label for="name">Your Name</label>
+                  <label for="name">Your Name</label>l
                   <input type="text" name="name" class="form-control" id="name" data-rule="minlen:4"
                     data-msg="Please enter at least 4 chars" required minlength="4"/>
                   <div class="validate"></div>
@@ -677,6 +677,7 @@
 
       </div>
     </section>
+
     <script>
       const scriptURL = 'https://script.google.com/macros/s/AKfycbyjGaMQMQ3_u_xyhBjqmtGUBdxEEuWi8aClxFwEZDjnKlK_lpE/exec'
       const form = document.forms['google-sheet']
@@ -684,11 +685,12 @@
       form.addEventListener('submit', e => {
         e.preventDefault()
         fetch(scriptURL, { method: 'POST', body: new FormData(form) })
-          .then(response => alert("Thank You! Your message has been sent. I will contact you as soon as possible if needed."))
+          .then(response => swal("Thank You!", "Your message has been sent. I will contact you as soon as possible.", "success"))
           .catch(error => console.error('Error!', error.message))
       })
     </script>
 
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
@@ -724,6 +726,8 @@
   <script src="assets/vendor/owl.carousel/owl.carousel.min.js"></script>
   <script src="assets/vendor/typed.js/typed.min.js"></script>
   <script src="assets/vendor/aos/aos.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
